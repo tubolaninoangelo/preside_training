@@ -1,0 +1,170 @@
+.modal-dialog-layout-container {
+	padding-bottom : 0 !important;
+
+	.main-content {
+		margin-left : 0;
+	}
+}
+
+
+&.quick-add-modal, &.quick-edit-modal, &.configurator-add-modal, &.configurator-edit-modal {
+ 	.modal-dialog {
+ 		width: 922px;
+
+ 		.modal-body {
+			padding : 0;
+		}
+
+		.modal-footer {
+			margin-top : 0;
+		}
+	}
+}
+
+.presidecms {
+	.modal-content {
+		border-radius    : 5px;
+		box-shadow       : 0px 5px 15px rgba(0, 0, 0, 0.5);
+		background-color : @grey14
+	}
+
+	.modal-header {
+		background-color : @grey14;
+		border-radius    : 5px 5px 0 0;
+
+		.modal-title {
+			font-size   : 13px;
+			font-weight : 700;
+		}
+
+		.close {
+			border      : none;
+			opacity     : 0.7;
+			font-size   : 19px;
+			text-shadow : none;
+		}
+	}
+
+	.modal-body {
+		background-color : @white;
+	}
+
+	.modal-footer {
+		border-radius    : 0 0 5px 5px;
+		background-color : @grey14;
+		margin-top       : 0;
+	}
+
+	&.modal-backdrop {
+		z-index : 1030;
+	}
+
+	.page-type-list{
+
+		.page-type{
+			margin-bottom: 10px;
+		}
+
+		.page-type-title{
+			text-align: center;
+		}
+
+		.page-type-icon{
+			display: block !important;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		p{
+			text-align: center;
+		}
+
+	}
+}
+
+.full-screen-dialog {
+	height : 100%;
+	.modal-dialog {
+		width : calc( ~"100% - 25px" );
+		height : 100%;
+
+		.modal-content {
+			height : 100%;
+
+			.modal-body {
+				height  : calc( ~"100% - 116px" );
+				padding : 0;
+				overflow : scroll;
+
+				.bootbox-body {
+					height : 100%;
+
+					iframe {
+						height : 100%;
+					}
+				}
+
+				.modal-padding {
+					padding : 20px;
+				}
+
+				.modal-padding-horizontal {
+					padding-left  : 20px;
+					padding-right : 20px;
+				}
+			}
+
+			.modal-footer {
+				margin-top : 0;
+			}
+		}
+	}
+
+	&.with-padding {
+		.modal-dialog .modal-content .modal-body {
+			padding : 20px;
+		}
+	}
+
+	&.limited-size {
+		.modal-dialog {
+			max-width  : 1200px;
+			max-height : 800px;
+
+			.modal-content .modal-body {
+				overflow : auto;
+
+				.bootbox-body iframe {
+					height : 99%;
+				}
+			}
+		}
+	}
+}
+
+.presidecms.iframe {
+	.page-content {
+		padding-left  : 0;
+		padding-right : 0;
+	}
+
+	.top-right-button-group {
+		top : 13px;
+	}
+
+	.modal-padding {
+		padding : 20px;
+	}
+	.modal-padding-horizontal {
+		padding : 0 20px;
+	}
+
+	.modal-dialog-less-padding {
+		padding : 0;
+
+		.modal-padding {
+			padding-top    : 0px;
+			padding-bottom : 0px;
+		}
+	}
+}

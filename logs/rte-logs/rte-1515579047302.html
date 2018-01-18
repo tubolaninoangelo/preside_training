@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>a timeout occurred after 0 second trying to acquire a exclusive lock with name [presideapplicationreload1FDAD7D9BAE2DDFBB000599C8C1C7F93].</title>
+</head>
+<body>
+
+<style>
+	#-railo-err			{ font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 11px; background-color:red; border: 1px solid black; }
+	#-railo-err td 		{ border: 1px solid #350606; color: #222; background-color: #FFCC00; line-height: 1.35; }
+	#-railo-err td.label	{ background-color: #FFB200; font-weight: bold; white-space: nowrap; vertical-align: top; }
+
+	#-railo-err .collapsed	{ display: none; }
+	#-railo-err .expanded 	{ display: block; }
+
+	.-railo-icon-plus 	{ background: url(data:image/gif;base64,R0lGODlhCQAJAIABAAAAAP///yH5BAEAAAEALAAAAAAJAAkAAAIRhI+hG7bwoJINIktzjizeUwAAOw==)
+    					no-repeat left center; padding: 4px 0 4px 16px; }
+
+	.-railo-icon-minus 	{ background: url(data:image/gif;base64,R0lGODlhCQAJAIABAAAAAP///yH5BAEAAAEALAAAAAAJAAkAAAIQhI+hG8brXgPzTHllfKiDAgA7)
+						no-repeat left center; padding: 4px 0 4px 16px; }
+
+	.-no-icon 	{padding: 0px 0px 0px 16px; }
+</style>
+<script>
+
+	var __RAILO = {
+
+		oc: 	function ( btn ) {
+
+			var id = btn.id.split( '$' )[ 1 ];
+
+			var curBtnClass = btn.attributes[ 'class' ];	// bracket-notation required for IE<9
+			var cur = curBtnClass.value;
+
+			var curCstClass = document.getElementById( '__cst$' + id ).attributes[ 'class' ];
+
+			if ( cur == '-railo-icon-plus' ) {
+
+				curBtnClass.value = '-railo-icon-minus';
+				curCstClass.value = 'expanded';
+			} else {
+
+				curBtnClass.value = '-railo-icon-plus';
+				curCstClass.value = 'collapsed';
+			}
+		}
+	}
+</script>
+
+
+
+<table id="-railo-err" cellpadding="4" cellspacing="2">
+	<tr>
+		<td colspan="2" class="label">Railo 4.5.5.006 Error (lock)</td>
+	</tr>
+	
+	<tr>
+		<td class="label">Message</td>
+		<td>a timeout occurred after 0 second trying to acquire a exclusive lock with name [presideapplicationreload1FDAD7D9BAE2DDFBB000599C8C1C7F93].</td>
+	</tr>
+	
+	
+	
+	
+	
+		
+	
+	
+		
+		
+			<tr>
+				<td class="label">Stacktrace</td>
+				<td>The Error Occurred in<br>
+					
+						
+						
+						
+
+							
+
+							<a class="-railo-icon-minus" id="__btn$1" onclick="__RAILO.oc( this );" style="cursor: pointer;">
+								<b>C:\xampp\htdocs\PXL8\preside-prac\preside\system\Bootstrap.cfc: line 154</b>
+							</a>
+							<br>
+
+							<blockquote class="expanded" id="__cst$1">
+								152: <br>
+153: 		try {<br>
+<b>154: 			lock name=lockname type=&quot;exclusive&quot; timeout=locktimeout {</b><br>
+155: 				if ( _reloadRequired() ) {<br>
+156: 					_announceInterception( &quot;prePresideReload&quot; );<br>
+<br>
+							</blockquote>
+						
+					
+						
+						
+						
+
+							
+
+							<a class="-railo-icon-plus" id="__btn$2" onclick="__RAILO.oc( this );" style="cursor: pointer;">
+								<b>called from</b> C:\xampp\htdocs\PXL8\preside-prac\preside\system\Bootstrap.cfc: line 39
+							</a>
+							<br>
+
+							<blockquote class="collapsed" id="__cst$2">
+								37: <br>
+38: 		if ( _reloadRequired() ) {<br>
+<b>39: 			_initEveryEverything();</b><br>
+40: 		}<br>
+41: <br>
+<br>
+							</blockquote>
+						
+					
+				</td>
+			</tr>
+		
+	
+	<tr>
+		<td class="label">Java Stacktrace</td>
+		<td>a timeout occurred after 0 second trying to acquire a exclusive lock with name [presideapplicationreload1FDAD7D9BAE2DDFBB000599C8C1C7F93].<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.tag.Lock.doStartTag(Lock.java:256):256<br><span style='margin-right: 1em;'>&nbsp;</span>	at preside.system.bootstrap_cfc$cf.udfCall2(/preside/system/Bootstrap.cfc:154):154<br><span style='margin-right: 1em;'>&nbsp;</span>	at preside.system.bootstrap_cfc$cf.udfCall(/preside/system/Bootstrap.cfc):-1<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.type.UDFImpl.implementation(UDFImpl.java:111):111<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.type.UDFImpl._call(UDFImpl.java:328):328<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.type.UDFImpl.call(UDFImpl.java:229):229<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.type.scope.UndefinedImpl.call(UndefinedImpl.java:766):766<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.util.VariableUtilImpl.callFunctionWithoutNamedValues(VariableUtilImpl.java:743):743<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.PageContextImpl.getFunction(PageContextImpl.java:1599):1599<br><span style='margin-right: 1em;'>&nbsp;</span>	at preside.system.bootstrap_cfc$cf.udfCall1(/preside/system/Bootstrap.cfc:39):39<br><span style='margin-right: 1em;'>&nbsp;</span>	at preside.system.bootstrap_cfc$cf.udfCall(/preside/system/Bootstrap.cfc):-1<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.type.UDFImpl.implementation(UDFImpl.java:111):111<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.type.UDFImpl._call(UDFImpl.java:328):328<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.type.UDFImpl.call(UDFImpl.java:229):229<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.ComponentImpl._call(ComponentImpl.java:642):642<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.ComponentImpl._call(ComponentImpl.java:524):524<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.ComponentImpl.call(ComponentImpl.java:1761):1761<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.listener.ModernAppListener.call(ModernAppListener.java:414):414<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.listener.ModernAppListener._onRequest(ModernAppListener.java:133):133<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.listener.MixedAppListener.onRequest(MixedAppListener.java:37):37<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.PageContextImpl.execute(PageContextImpl.java:2271):2271<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.PageContextImpl.execute(PageContextImpl.java:2234):2234<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.runtime.engine.CFMLEngineImpl.serviceCFML(CFMLEngineImpl.java:456):456<br><span style='margin-right: 1em;'>&nbsp;</span>	at lucee.loader.servlet.CFMLServlet.service(CFMLServlet.java:47):47<br><span style='margin-right: 1em;'>&nbsp;</span>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790):790<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85):85<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129):129<br><span style='margin-right: 1em;'>&nbsp;</span>	at org.cfmlprojects.regexpathinfofilter.RegexPathInfoFilter.doFilter(RegexPathInfoFilter.java:47):47<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61):61<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131):131<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84):84<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62):62<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36):36<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43):43<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43):43<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:274):274<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:209):209<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.spec.RequestDispatcherImpl.forwardImpl(RequestDispatcherImpl.java:221):221<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.spec.RequestDispatcherImpl.forwardImplSetup(RequestDispatcherImpl.java:147):147<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.spec.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:111):111<br><span style='margin-right: 1em;'>&nbsp;</span>	at org.tuckey.web.filters.urlrewrite.NormalRewrittenUrl.doRewrite(NormalRewrittenUrl.java:213):213<br><span style='margin-right: 1em;'>&nbsp;</span>	at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:171):171<br><span style='margin-right: 1em;'>&nbsp;</span>	at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145):145<br><span style='margin-right: 1em;'>&nbsp;</span>	at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92):92<br><span style='margin-right: 1em;'>&nbsp;</span>	at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389):389<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61):61<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131):131<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84):84<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62):62<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36):36<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131):131<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57):57<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43):43<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46):46<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64):64<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60):60<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77):77<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43):43<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43):43<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43):43<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292):292<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81):81<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138):138<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135):135<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48):48<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43):43<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272):272<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81):81<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104):104<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:211):211<br><span style='margin-right: 1em;'>&nbsp;</span>	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:809):809<br><span style='margin-right: 1em;'>&nbsp;</span>	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142):1142<br><span style='margin-right: 1em;'>&nbsp;</span>	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617):617<br><span style='margin-right: 1em;'>&nbsp;</span>	at java.lang.Thread.run(Thread.java:745):745<br><span style='margin-right: 1em;'>&nbsp;</span></td>
+	</tr>
+	<tr>
+		<td class="label">Timestamp</td>
+		<td>
+			
+			1/10/18 6:10:47 PM GMT+08:00
+		</td>
+	</tr>
+</table>
+<br>
+</body>
+</html>

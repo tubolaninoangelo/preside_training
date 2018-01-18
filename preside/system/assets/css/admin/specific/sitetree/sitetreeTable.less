@@ -1,0 +1,90 @@
+@import url( 'globals.less' );
+
+@fontAwesomeFixedWidthSize : 1.28571429em;
+
+.presidecms {
+	.tree-table {
+
+		.actions > .fa,
+		.actions a .fa {
+			margin-right : 0.4em;
+
+			&.disabled {
+				color : @default-disabled-font-colour;
+			}
+		}
+
+		.tree-toggler {
+			color  : @default-font-colour;
+			cursor : pointer;
+			margin-left : -@fontAwesomeFixedWidthSize;
+		}
+
+		tbody > tr {
+
+			&.selected, &:active, &:focus {
+				outline : 0;
+
+				> td {
+					background-color : @default-selected-row-colour;
+				}
+			}
+
+			> td:first-child {
+				padding-left: ( @fontAwesomeFixedWidthSize + 0.5em );
+			}
+
+			&.draft {
+				font-style : italic;
+
+				a {
+					color : @lighter-blue;
+				}
+			}
+
+			&.has-drafts {
+				font-style: italic;
+			}
+		}
+
+		.page-title-cell {
+			min-width : 450px;
+
+			.page-title {
+				text-overflow : ellipsis;
+				width         : 270px;
+				white-space   : nowrap;
+				overflow      : hidden;
+				display       : inline-block;
+				position      : relative;
+				top           : 4px;
+			}
+		}
+
+		.preview-link {
+			text-overflow : ellipsis;
+			width         : 150px;
+			white-space   : nowrap;
+			overflow      : hidden;
+			display       : inline-block;
+		}
+
+		.managed-page-type-link-cell {
+			font-style : italic;
+		}
+
+		.ajax-loading, .ajax-loading-error {
+			color      : @default-light-font-colour;
+			font-style : italic;
+		}
+
+		.depth-1  td:first-child { padding-left : ( (@fontAwesomeFixedWidthSize * 2) + 1em ); }
+		.depth-2  td:first-child { padding-left : ( (@fontAwesomeFixedWidthSize * 3) + 1em ); }
+		.depth-3  td:first-child { padding-left : ( (@fontAwesomeFixedWidthSize * 4) + 1em ); }
+		.depth-4  td:first-child { padding-left : ( (@fontAwesomeFixedWidthSize * 5) + 1em ); }
+		.depth-5  td:first-child { padding-left : ( (@fontAwesomeFixedWidthSize * 6) + 1em ); }
+		.depth-6  td:first-child { padding-left : ( (@fontAwesomeFixedWidthSize * 7) + 1em ); }
+		.depth-7  td:first-child { padding-left : ( (@fontAwesomeFixedWidthSize * 8) + 1em ); }
+		.depth-8  td:first-child { padding-left : ( (@fontAwesomeFixedWidthSize * 9) + 1em ); }
+	}
+}

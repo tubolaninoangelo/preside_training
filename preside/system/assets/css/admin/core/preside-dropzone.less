@@ -1,0 +1,51 @@
+.asset-upload-dropzone {
+	cursor     : pointer;
+	min-height : 300px;
+
+	.upload-instructions {
+		 cursor : pointer;
+		 * {
+ 			cursor : pointer;
+		 }
+	}
+
+	.dz-message {
+		margin-top : 100px;
+		text-align : center;
+
+		.upload-buttons {
+			display : none;
+		}
+	}
+
+	&.dz-started {
+		.dz-message {
+			display    : block;
+			margin-top : 0;
+
+			.upload-buttons {
+				display : block;
+			}
+
+			.upload-instructions {
+				display : none;
+			}
+		}
+	}
+}
+
+&.iframe {
+	.asset-upload-dropzone {
+		margin : 0 16px;
+
+		.dz-message {
+			margin : 55px 0;
+		}
+
+		&.dz-started {
+			.dz-message {
+				display : none;
+			}
+		}
+	}
+}

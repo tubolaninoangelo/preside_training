@@ -1,0 +1,59 @@
+@import url( 'globals.less' );
+
+html.presidecms {
+	overflow-y : auto !important;
+}
+
+.presidecms {
+
+	.widget-image-link {
+		display : block;
+		margin  : 10px 0;
+
+		img {
+			width : 100%;
+		}
+	}
+
+	.widget-search {
+		.input-icon {
+			width : 100%;
+
+			input {
+				border        : 1px solid @default-selected-input-border-colour;
+				width         : 100%;
+				border-radius : 4px !important;
+				font-size     : 13px;
+				color         : @default-input-font-colour;
+				padding-left  : 25px;
+			}
+
+			.fa {
+				top: -5px !important;
+			}
+		}
+	}
+
+	.widget-list {
+		li {
+			border-bottom  : 1px solid @default-panel-border-colour;
+			padding        : 0 5px 5px 5px;
+			overflow       : auto;
+
+			&:last-child {
+				border-bottom  : none;
+			}
+
+			&:active, &:focus, &:hover {
+				cursor           : pointer;
+				outline          : none;
+				background-color : @default-panel-background-colour;
+			}
+
+			.widget-icon-container {
+				margin-right : 1em;
+				min-width : 60px;
+			}
+		}
+	}
+}

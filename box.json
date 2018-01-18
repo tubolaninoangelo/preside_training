@@ -1,0 +1,14 @@
+{
+    "name":"Training",
+    "version":"1.0.0",
+    "author":"Pixl8",
+    "slug":"training",
+    "createPackageDirectory" : false,
+    "private":true,
+    "installPaths":{
+        "presidecms":"preside"
+    },
+    "dependencies":{
+        "presidecms":"stable"
+    }
+}

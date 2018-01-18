@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form i18nBaseUri="page-types.events:">
+
+	<tab id="main">
+		<fieldset id="main">
+			<field binding="events.items_per_page" />
+			<field binding="events.featured_event" />
+
+			<field binding="events.region" 		quickadd="true" quickedit="true" sortable="true"/>
+			<field binding="events.categories" 	quickadd="true" quickedit="true" />
+			<field binding="page.bottom_content" />
+		</fieldset>
+	</tab>
+
+	<tab id="sidebar">
+		<fieldset id="sidebar">
+			<field binding="page.sidebar_content" />
+		</fieldset>
+	</tab>
+</form>

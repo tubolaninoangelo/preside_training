@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--#!autodoc
+Sitetree Page: restore form
+
+This form is used in the 'restore page' screen in the sitetree section of the administrator.
+This occurs when a user wants to restore a page that has been previously deleted and stored in the
+recycle bin.
+-->
+<form>
+	<tab id="main" sortorder="10">
+		<fieldset id="main" sortorder="10">
+			<field sortorder="10" binding="page.parent_page" control="sitetreePagePicker" required="true" />
+			<field sortorder="20" binding="page.slug" />
+		</fieldset>
+	</tab>
+</form>

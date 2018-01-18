@@ -1,0 +1,103 @@
+@import url( 'globals.less' );
+
+.presidecms {
+
+	.manage-context-permissions-form {
+
+		.table {
+
+			.permission-col {
+				width : 30%;
+
+				h4 {
+					margin : 0 0 4px;
+				}
+				p {
+					margin : 0 0 2px;
+				}
+			}
+
+			tr:first-child > td {
+				border-top : none;
+			}
+
+			.edit-col {
+				cursor : pointer;
+
+				&.edit-mode {
+					cursor : default;
+
+					.groups-list {
+						display : none;
+					}
+
+					.groups-input {
+						display : block;
+					}
+				}
+
+				.groups-input {
+					display       : none;
+					background    : @default-panel-background-colour;
+					border-radius : 5px;
+					padding       : 5px 8px;
+
+					.close-icon {
+						margin-top : 4px;
+						cursor     : pointer;
+						color      : @context-perms-light-font-colour;
+					}
+				}
+
+				.groups-list {
+					margin  : 4px 0;
+					cursor  : pointer;
+					display : inline-block;
+					padding : 2px 8px;
+
+					p {
+						margin : 0;
+					}
+
+					.fa {
+						margin-right : 0.5em;
+					}
+
+					.overrided {
+						text-decoration : line-through;
+					}
+
+					.inherited-perm, .no-perms {
+						color : @context-perms-light-font-colour;
+					}
+
+					.selected-perm {
+						font-weight : bold;
+					}
+					.no-perms {
+						font-style : italic;
+					}
+
+					.edit-row-icon {
+						color   : @context-perms-light-font-colour;
+						margin  : 4px 0 0 1em;
+						display : none;
+					}
+				}
+
+				&:hover .groups-list, .groups-list:active, .groups-list:focus {
+					background    : @default-panel-background-colour;
+					border-radius : 5px;
+
+					.edit-row-icon {
+						display : inline-block;
+					}
+				}
+			}
+
+			tbody>tr>td {
+				vertical-align: middle
+			}
+		}
+	}
+}

@@ -1,0 +1,201 @@
+.preside-theme {
+	.navbar  {
+		background-color : @preside-bar-background-colour;
+	}
+
+	.navbar-brand {
+		width       : 177px;
+		height      : 45px;
+		text-indent : -9999px;
+		background  : url( ../../../images/logos/logo-preside-admin-header.png ) no-repeat left center;
+	}
+
+	.site-picker {
+		min-width : 150px;
+
+		.dropdown-toggle {
+			text-align : left;
+		}
+
+		.fa {
+			margin-right: 5px;
+		}
+	}
+
+	.ace-nav {
+		> li, > li.open {
+			position    : relative;
+			z-index     : 2;
+			border-left : 1px solid @preside-bar-separator-shadow-colour;
+
+			&:after {
+				border-left : 1px solid @preside-bar-separator-highlight-colour;
+				width       : 1px;
+				content     : "";
+				position    : absolute;
+				top         : 0;
+				left        : 0;
+				bottom      : 0;
+			}
+
+			> a, > a:hover,  > a:focus, > a:active {
+				background-color : @preside-bar-background-colour !important;
+				border-left : none;
+				display : inline;
+			}
+
+			&:last-child {
+				border-right :  1px solid @preside-bar-separator-highlight-colour;
+				> a {
+					border-right : 1px solid @preside-bar-separator-shadow-colour;
+				}
+			}
+
+			&.application-menu {
+				border : none;
+
+				> a, > a:hover,  > a:focus, > a:active {
+					border  : none;
+					padding : 0;
+				}
+
+				.application-menu-toggle {
+					margin: 0 4px 0 -25px;
+				}
+
+				.application-list-item {
+
+					.application-link {
+						display : block;
+					}
+
+					.application-title {
+						display       : block;
+						margin-bottom : 0.5em;
+					}
+
+					.application-description {
+						display       : block;
+						color         : @default-light-font-colour;
+						margin-left   : 2.5em;
+					}
+
+					.application-listing {
+						padding : 0 1em 1em 0;
+						border-bottom : 1px solid @default-separator-border-colour;
+					}
+
+					&:first-child {
+						.application-listing {
+							padding-top : 0;
+						}
+					}
+
+					&:last-child {
+						.application-listing {
+							border-bottom : none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.nav-list>li.active:after {
+		border-right: 2px solid @nav-list-selected-highlight-colour;
+	}
+	.nav-list li.active>a:after {
+		border-right-color       : @nav-list-selected-highlight-colour;
+		-moz-border-right-colors : @nav-list-selected-highlight-colour;
+	}
+
+	.dropdown-menu {
+		> li {
+			list-style   : none !important;
+			margin-left  : 0;
+			padding-left : 0;
+		}
+
+		&.dropdown-navbar {
+			.dropdown-header,
+			> li > a {
+				padding-left : 5px;
+				padding-right : 5px;
+			}
+		}
+	}
+
+	.sitewide-alert {
+		margin-bottom : 0;
+	}
+
+	.tab-content {
+		background-color : @white;
+	}
+
+	.info-bar {
+		margin-top       : -13px;
+		background-color : @crumb-and-left-nav-background-color;
+		padding          : 8px;
+		margin-bottom    : 14px;
+	}
+
+	.search-box {
+		border-radius    : 5px !important;
+		border-color     : @white;
+		background-color : @white !important;
+
+		&:hover, &:focus, &:active {
+			border-color : @white;
+		}
+	}
+
+	.form-control.form-control-no-border {
+		border       : none;
+		height       : 32px;
+		padding-top  : 4px;
+		padding-left : 0px;
+	}
+
+	.main-container {
+		padding-bottom : 100px;
+	}
+
+	.footer {
+		text-align : right;
+		color      : @default-light-font-colour;
+		background : @white url( "../../../images/logos/preside-logo-watermark.png" ) right 20px no-repeat;
+		position   : absolute;
+		bottom     : 0;
+		right      : 0;
+		width      : 100%;
+		height     : 75px;
+		padding    : 20px 50px 10px 0;
+		margin     : 0 10px 0 0;
+		z-index    : 0;
+	}
+
+	.sidebar {
+		z-index : 1;
+	}
+
+	.breadcrumbs {
+		z-index : 2;
+	}
+
+	.list-extra-line-height {
+		> li {
+			margin-bottom : 1em;
+		}
+	}
+}
+
+.preside-loading-sheen {
+	position   : absolute;
+	top        : 0;
+	left       : 0;
+	width      : 100%;
+	height     : 100%;
+	z-index    : 9999;
+	background : rgba(255,255,255,0.5) url( ../../../images/loading-gifs/large.gif ) no-repeat center center;
+}

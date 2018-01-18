@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form i18nBaseUri="widgets.video:">
+	<tab>
+		<fieldset>
+			<field name="video_url" />
+			<field name="video_title" />
+			<field name="video_description" />
+			<field name="video_dimension" control="imageDimensions" required="true" />
+		</fieldset>
+	</tab>
+</form>

@@ -1,0 +1,54 @@
+@import url( 'globals.less' );
+
+html {
+	margin-top : 45px !important;
+}
+
+.preside-admin-toolbar {
+	width            : 100%;
+	position         : fixed;
+	top              : 0;
+	left             : 0;
+	font-family      : @default-font;
+	z-index          : 103;
+	color            : white;
+	background-color : @preside-bar-background-colour;
+	padding          : 0 10px;
+
+	h1 {
+		width       : 177px;
+		height      : 45px;
+		text-indent : -9999px;
+		background  : url( ../../../images/logos/logo-preside-admin-header.png ) no-repeat left center;
+		float       : left;
+		margin      : 0;
+	}
+
+	a, span, p, li, label {
+		font-size : 13px;
+	}
+
+	.nav {
+		li {
+			margin-left   : 0px !important;
+			margin-bottom : 0px !important;
+			list-style    : none;
+
+			&:before {
+				content : unset;
+			}
+
+			&.no-border-left, &.no-border-left.open {
+				border-left-width : 0!important;
+
+				&::after {
+					content : unset;
+				}
+			}
+		}
+	}
+}
+
+body {
+	padding-bottom : 100px !important;
+}

@@ -1,0 +1,46 @@
+@import url( 'globals.less' );
+
+.presidecms {
+
+	.breadcrumbs .breadcrumb {
+		margin-left : 10px;
+	}
+
+	.asset-listing-table {
+		thead tr {
+			display : none;
+		}
+
+		td:first-child {
+			width      : 45px;
+			text-align : center;
+		}
+
+		tr {
+			cursor : pointer;
+
+			&.asset {
+
+				.selected-icon {
+					display : none;
+				}
+
+				&.selected {
+					background-color : @default-selected-row-colour !important;
+
+					td {
+						background-color : @default-selected-row-colour !important;
+					}
+					.selected-icon {
+						display : inline-block;
+					}
+				}
+
+			}
+
+			&:focus, &:active {
+				outline : none;
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--#!autodoc
+User: edit profile form
+
+This form is used for the "edit my profile" form
+-->
+<form>
+	<tab id="basic" sortorder="10">
+		<fieldset id="basic" sortorder="10">
+			<field binding="security_user.email_address" required="true" control="emailinput" />
+			<field binding="security_user.known_as" />
+			<field binding="security_user.user_language" control="localePicker" />
+		</fieldset>
+	</tab>
+</form>

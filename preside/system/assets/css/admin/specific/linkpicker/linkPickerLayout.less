@@ -1,0 +1,30 @@
+@import url( 'globals.less' );
+
+.presidecms {
+	.link-type-menu {
+		border-right  : 1px solid @default-separator-border-colour;
+		padding-right : 10px;
+		min-height    : 250px;
+
+		.link-type-list {
+			text-align : right;
+
+			.link-type {
+				margin : 5px 0;
+
+				&.selected {
+					font-weight : bold;
+
+					a {
+						color: inherit;
+						cursor: default;
+
+						&:hover {
+							text-decoration : none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,7 @@
+/**
+ * @dataManagerGroup Events
+ */
+
+component {
+
+}

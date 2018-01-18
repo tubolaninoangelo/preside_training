@@ -1,0 +1,80 @@
+@import url( 'globals.less' );
+
+html.presidecms {
+	background: @preside-bar-background-colour url( ../../../../images/backgrounds/login-puffin.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.presidecms {
+	.login-layout {
+		background-color : transparent;
+
+		.widget-box, .widget-box, .widget-main {
+			background-color : @login-box-background-colour;
+		}
+
+		.widget-box {
+			top           : 100px;
+			padding       : 10px;
+
+			.cms-brand {
+				height      : 48px;
+				text-indent : -999em;
+				background : url( ../../../../images/logos/preside-logo-for-login.png ) no-repeat center center;
+
+				&.pulled-left {
+					background-position : left center;
+				}
+			}
+		}
+
+		.admin-locale-picker-container {
+			position : absolute;
+			top      : 10px;
+			right    : 0;
+
+			.admin-locale-picker-link:hover {
+				text-decoration: none;
+			}
+		}
+
+		&.two-col {
+			.login-container {
+				width : 750px;
+			}
+
+			.widget-box, .widget-box, .widget-main {
+				background-color : @white;
+			}
+
+			.widget-box .widget-main {
+				padding-left  : 18px;
+				padding-right : 18px;
+			}
+
+			.right-col {
+				border-left : 1px solid @default-separator-border-colour;
+			}
+
+			.login-help-title {
+				height         : 35px;
+				font-size      : 2em;
+				margin-top     : 23px;
+			}
+
+			.login-help-image {
+				display : block;
+				margin  : 15px auto;
+			}
+		}
+	}
+
+	.admin-locale-picker-container {
+		.locale-flag {
+			margin-right : 0.2em;
+		}
+	}
+}

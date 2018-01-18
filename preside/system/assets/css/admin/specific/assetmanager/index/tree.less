@@ -1,0 +1,65 @@
+@import url( 'globals.less' );
+
+.presidecms {
+	.navigation-tree-container {
+	}
+	.preside-tree-nav {
+		overflow : visible;
+
+		.tree-item, .tree-folder {
+			border : none;
+
+			.tree-node-icon {
+				margin-left  : 0 !important;
+				margin-right : 0 !important;
+				position     : relative;
+				z-index      : 2;
+			}
+
+
+			&::before {
+				width : 6px;
+				left  : -2px;
+			}
+		}
+
+		.tree-folder {
+			.tree-folder-content {
+				&::before {
+					left : -3px;
+				}
+			}
+		}
+
+		.tree-node {
+			margin-right : -2px !important;
+
+			.node-name {
+				margin-left : 0;
+				display : block;
+			}
+
+			&.selected {
+				background-color : @default-row-hover-colour !important;
+
+				&:after {
+					display:inline-block; content:"";
+					position:absolute;
+					right:1px; top:-1px; bottom:0;
+					z-index:2;
+
+					border:2px solid @tree-list-selected-highlight-color;
+					border-width: 0 2px 0 0;
+				}
+			}
+
+			&.tree-folder-header {
+				&.selected {
+					.node-name:after {
+						right:1; top:3px;
+					}
+				}
+			}
+		}
+	}
+}

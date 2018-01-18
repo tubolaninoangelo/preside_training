@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form i18nBaseUri="page-types.event_detail:">
+
+	<tab id="main">
+		<fieldset id="main">
+
+			<field binding="event_detail.event_startdate" 	control="datePicker" />
+			<field binding="event_detail.event_enddate" 	control="datePicker" />
+			<!-- <field binding="event_detail.date_published" 	control="datePicker" /> -->
+
+			<field binding="event_detail.region" 	quickadd="true" quickedit="true" />
+			<field binding="event_detail.category"  quickadd="true" quickedit="true" />
+			<field binding="event_detail.programmes" />
+			<field binding="page.bottom_content"     />
+
+		</fieldset>
+	</tab>
+
+	<tab id="event_document">
+		<fieldset id="event_document">
+			<field binding="event_detail.event_document" control="assetPicker" allowedTypes="document" maxFileSize="20" />
+		</fieldset>
+	</tab>
+
+	<tab id="event_booking">
+		<fieldset id="event_booking">
+			<field binding="event_detail.event_bookeable" control="yesNoSwitch" />
+			<field binding="event_detail.event_price" />
+		</fieldset>
+	</tab>
+</form>

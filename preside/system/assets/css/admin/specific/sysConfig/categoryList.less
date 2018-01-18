@@ -1,0 +1,26 @@
+@import url( 'globals.less' );
+
+.presidecms {
+	.config-category {
+		overflow : auto;
+		padding  : 10px;
+		border-bottom : 1px solid @default-separator-border-colour;
+
+		&:last-child {
+			border-bottom : none;
+		}
+
+		&:hover {
+			background-color : @default-panel-background-colour;
+			border-radius    : 5px;
+		}
+
+		h4 {
+			margin:0;
+		}
+
+		.title-and-description {
+			margin-left : 1em;
+		}
+	}
+}

@@ -1,0 +1,41 @@
+@import url( 'globals.less' );
+
+.presidecms {
+
+	.form-actions {
+		display : none;
+	}
+
+	.asset-manager-listing-form {
+		min-height : 400px;
+	}
+
+	.asset-listing-table {
+		tbody {
+			tr {
+				td {
+					vertical-align : middle;
+
+					.icon-derivative {
+						margin-right     : 0.5em;
+						display          : inline-block;
+					}
+
+					.asset-preview {
+						width   : 60px;
+						display : inline-block;
+
+						img {
+							max-width  : 48px;
+							max-height : 32px;
+						}
+					}
+				}
+
+				&:first-child td {
+					border-top : none;
+				}
+			}
+		}
+	}
+}
