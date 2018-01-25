@@ -5,6 +5,8 @@
 <cf_presideparam name="args.event_startdate"	field="event_detail.event_startdate"	/>
 <cf_presideparam name="args.event_enddate"		field="event_detail.event_enddate"		/>
 <cf_presideparam name="args.document"			field="event_detail.event_document"		/>
+<cf_presideparam name="args.event_price" 		field="event_detail.event_price"	 	/>
+<cf_presideparam name="args.bookable" 			field="event_detail.event_bookeable"	/>
 
 <cfscript>
 	relatedEvents = args.relatedEvents ?: "";
@@ -34,7 +36,14 @@
 
 				</cfif>
 
+
 				<p>#renderViewlet( event="page-types.events._renderDetailRegion", args={ eventId= args.id } )#</p>
+
+				<cfif args.bookable >
+
+					<a href="#event.buildLink( page="event_booking", queryString="event_id=#args.id#&event_price=#args.event_price#" )#" class="btn">Book an event</a>
+
+				</cfif>
 
 				#renderViewlet( event="page-types.event_detail._renderEventDetailProgram" )#
 

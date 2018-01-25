@@ -2,13 +2,15 @@
 <form i18nBaseUri="page-type.event_booking:">
 	<tab>
 		<fieldset>
-			<field name="fname" 		 	control="text_input"	label="First name" 		required="true"/>
-			<field name="lname" 		 	control="text_input"	label="Last name" 		required="true"/>
+			<field name="event_id" 			control="hidden"		required="true"/>
+			<field name="event_price" 		control="hidden"		id="event-price" 		required="true"/>
+			<field name="firstname" 		control="text_input"	label="First name" 		required="true"/>
+			<field name="lastname" 		 	control="text_input"	label="Last name" 		required="true"/>
 			<field name="email" 		 	control="emailInput"	label="Email" 			required="true"/>
-			<field name="number-of-seat" 	control="select"   		label="Number of seat" 	required="true"/>
-			<field name="total-amount"	 	control="text_input"   	label="Total amount" 	readonly="true"	required="true"/>
-			<field name="session"	 	 	control="checkbox"   	label="Session" 		required="true"/>
-			<field name="special-request"	control="textarea"   	label="Special request" required="true"/>
+			<field name="number_of_seat"    control="select"   		label="Number of seat" 	values="1,2,3,4,5,6,7,8,9,10" labels="1,2,3,4,5,6,7,8,9,10" id="number_of_seat" required="true"/>
+			<field name="total_amount"	 	control="text_input"   	label="Total amount" 	readonly="true"	 id="total_amount" required="true"/>
+			<field name="session"	 	 	control="checkboxList"  label="Session" 		object="session"/>
+			<field name="special_request"	control="textarea"   	label="Special request" required="true"/>
 		</fieldset>
 	</tab>
 </form>

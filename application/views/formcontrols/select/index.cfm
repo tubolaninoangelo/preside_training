@@ -2,15 +2,22 @@
 	inputName    = args.name         ?: "";
 	inputId      = args.id           ?: "";
 	defaultValue = args.defaultValue ?: "";
-	values       = args.values       ?: [1,2,3,4,5,6,7,8,9,10];
+	values       = args.values       ?: "";
+	labels       = args.labels       ?: "";
 	placeholder  = args.placeholder  ?: "";
 	tabindex     = getNextTabIndex();
 
-	value  = event.getValue( name=inputName, defaultValue=defaultValue );
+	if ( IsSimpleValue( values ) ) { values = ListToArray( values ); }
+	if ( IsSimpleValue( labels ) ) { labels = ListToArray( labels ); }
+
+	value = event.getValue( name=inputName, defaultValue=defaultValue );
 	if ( not IsSimpleValue( value ) ) {
 		value = "";
 	}
+
 	value = HtmlEditFormat( value );
+	valueFound = false;
+
 </cfscript>
 
 <cfoutput>

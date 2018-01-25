@@ -16,7 +16,7 @@
 
 <cfoutput>
 
-	<input type="email" id="#inputId#" placeholder="#placeholder#" name="#inputName#" value="#value#" class="#inputClass# form-control" tabindex="#getNextTabIndex()#" <cfif readOnly>readonly</cfif> > <!---
+	<input type="text" id="#inputId#" placeholder="#placeholder#" name="#inputName#" value="#value#" class="#inputClass# form-control" tabindex="#getNextTabIndex()#" <cfif readOnly>readonly</cfif> > <!---
 	<label class="label" for="#inputId#">#args.args.label#</label> --->
 
 </cfoutput>

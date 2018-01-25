@@ -4,7 +4,6 @@
 component {
 
     public any function init( ) {
-        // _setEventDetailDao( arguments.eventDetailDao );
 
         return this;
     }
