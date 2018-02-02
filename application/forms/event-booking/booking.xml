@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form i18nBaseUri="page-type.event_booking:">
+	<tab>
+		<fieldset>
+			<field name="event_id" 			control="hidden"					/>
+			<field name="firstname" 		control="textInput"		label="First name" 		required="true"/>
+			<field name="lastname" 		 	control="textInput"		label="Last name" 		required="true"/>
+			<field name="email" 		 	control="emailInput"	label="Email" 			required="true"/>
+			<field name="number_of_seat"    control="select"   		label="Number of seat" 	values="1,2,3,4,5,6,7,8,9,10" labels="1,2,3,4,5,6,7,8,9,10" defaultValue="1" id="number_of_seat" required="true"/>
+			<field name="total_amount"	 	control="textInput"   	label="Total amount" 	readonly="true"	 id="total_amount"/>
+			<field name="session"	 	 	control="checkboxList"  label="Session" 		/>
+			<field name="special_request"	control="textarea"   	label="Special request" />
+		</fieldset>
+	</tab>
+</form>

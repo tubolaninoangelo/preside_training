@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form i18nBaseUri="cms:emailcenter.settings.general.form.">
+	<tab id="default" sortorder="10">
+		<fieldset id="anonymous_recipient" sortorder="15">
+			<field sortorder="10" name="to_event_booking_admin"  control="textinput" required="true" />
+		</fieldset>
+	</tab>
+</form>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form i18nBaseUri="email.layout.booking:">
+	<tab id="default">
+		<fieldset id="default" sortorder="10">
+			<field name="footer"           control="richeditor"   widgetCategories="email" />
+			<field name="footer_plain"     control="textarea" />
+		</fieldset>
+	</tab>
+</form>

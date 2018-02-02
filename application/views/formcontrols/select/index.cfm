@@ -28,7 +28,7 @@
             tabindex="#getNextTabIndex()#"
             data-placeholder=" "
             data-value="#value#">
-        <option value="">Please select</option>
+        <option value="#defaultValue#">Please select</option>
         <cfloop array="#values#" index="i" item="selectValue">
             <option value="#HtmlEditFormat( selectValue )#">
                 #HtmlEditFormat( translateResource( labels[i] ?: "", labels[i] ?: "" ) )#

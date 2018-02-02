@@ -15,8 +15,7 @@ component extends="preside.system.config.Config" {
 		settings.ckeditor.defaults.stylesheets.append( "css-bootstrap" );
 		settings.ckeditor.defaults.stylesheets.append( "css-layout" );
 
-		settings.features.websiteUsers.enabled = false;
-
+		settings.features.websiteUsers.enabled = true;
 
 		settings.assetmanager.types.document = {
 		      pdf  = { serveAsAttachment=true, mimeType="application/pdf"    }
@@ -25,5 +24,19 @@ component extends="preside.system.config.Config" {
 		    , dot  = { serveAsAttachment=true, mimeType="application/msword" }
 		};
 
+		_setupEmailSettings();
+		_setupNotificationTopics();
+
+	}
+
+	private void function _setupEmailSettings() {
+		settings.email.templates.eventBookingConfirmationAdmin = { feature="cms", recipientType="anonymous", parameters=[
+			{ id="event_booking_details", required=true }
+		] };
+	}
+
+	private void function _setupNotificationTopics() {
+		settings.notificationTopics = settings.notificationTopics ?: [];
+		settings.notificationTopics.append( "eventBooking" );
 	}
 }

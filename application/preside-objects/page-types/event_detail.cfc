@@ -14,7 +14,7 @@ component  {
 	property name="programmes"  	relationship="one-to-many" 	relatedTo="programme"	relationshipkey="event_detail";
 
 	// Event booking
-	property name="event_bookeable" type="boolean" 	dbtype="boolean";
-	property name="event_price" 	type="string" 	dbtype="varchar";
+	property name="event_bookable"  type="boolean" 	dbtype="boolean";
+	property name="event_price" 	type="int" 		dbtype="varchar";
 	property name="sessions"  	 	relationship="one-to-many"  relatedTo="session" relationshipkey="event_detail";
 }

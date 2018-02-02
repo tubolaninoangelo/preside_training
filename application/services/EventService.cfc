@@ -87,9 +87,23 @@ component {
     }
 
 
-    public query function getCategeryById( required string categoryId ) {
+    public query function getEventDetailsById( required string eventId ) {
 
-        return "hello";
+        return $getPresideObject( "event_detail" ).selectData(
+              selectFields = [
+                  "page.title"
+                , "event_price" ]
+            , filter = { id = arguments.eventId }
+        );
+    }
+
+    public query function getEventSessionsById( required string eventId ) {
+
+        return $getPresideObjectService().selectData(
+              objectName   = "session"
+            , selectFields = [ "id", "label" ]
+            , filter = { "event_detail" = arguments.eventId }
+        );
     }
 
 }

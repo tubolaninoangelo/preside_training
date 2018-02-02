@@ -24,7 +24,7 @@
 
 	<tab id="event_booking">
 		<fieldset id="event_booking">
-			<field binding="event_detail.event_bookeable" control="yesNoSwitch" />
+			<field binding="event_detail.event_bookable" control="yesNoSwitch" />
 			<field binding="event_detail.event_price" />
 			<field binding="event_detail.sessions" />
 		</fieldset>
