@@ -15,6 +15,14 @@ component {
 			  }
 		);
 
+		bundle.addAssets(
+              directory   = "/js/"
+            , match       = function( filepath ){ return ReFindNoCase( "\.(js|css)$", filepath ); }
+            , idGenerator = function( path ) {
+                return ListDeleteAt( path, ListLen( path, "/" ), "/" ) & "/";
+            }
+        );
+
 		bundle.asset( "css-bootstrap" ).before( "*" );
 		bundle.asset( "js-bootstrap" ).dependsOn( "js-jquery" );
 	}
