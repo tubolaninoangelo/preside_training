@@ -37,8 +37,7 @@ component {
                 ]
                 , filter = filter
                 , groupBy = "event_detail.id"
-            )
-
+            );
 
         return eventDetail;
     }
@@ -46,7 +45,8 @@ component {
     public query function getRegionFilters() {
 
         return $getPresideObject( "region" ).selectData(
-            selectFields = [ "region.id", "region.label" ]
+              selectFields = [ "region.id", "region.label" ]
+            , orderBy      = "region.label ASC"
         );
 
     }
@@ -92,7 +92,10 @@ component {
         return $getPresideObject( "event_detail" ).selectData(
               selectFields = [
                   "page.title"
-                , "event_price" ]
+                , "event_price"
+                , "seats_allocated"
+                , "seats_booked"]
+
             , filter = { id = arguments.eventId }
         );
     }
@@ -106,4 +109,12 @@ component {
         );
     }
 
+    public query function getEventSeatsById( required string eventId ) {
+
+        return $getPresideObjectService().selectData(
+              objectName   = "event_detail"
+            , selectFields = [ "seats_allocated", "seats_booked" ]
+            , filter = { id = arguments.eventId }
+        );
+    }
 }

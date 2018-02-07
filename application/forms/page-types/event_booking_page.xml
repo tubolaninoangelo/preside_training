@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form i18nBaseUri="page-types.event_booking_page:">
 
-	<tab id="event_booking">
+<!-- 	<tab id="event_booking">
 		<fieldset id="event_booking">
 
 		</fieldset>
-	</tab>
+	</tab> -->
 </form>

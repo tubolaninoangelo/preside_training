@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form i18nBaseUri="page-type.member_registration_page:">
+	<tab>
+		<fieldset id="personal-detail">
+			<field name="firstname"		control="textInput"		label="First name" 								required="true"/>
+			<field name="lastname"		control="textInput"		label="Last name" 								required="true"/>
+			<field name="birth_date"	control="datePicker"	label="Birthdate" 								required="true"/>
+			<field name="email"			control="emailInput"	label="Email address" 							required="true"/>
+			<field name="gender"		control="radioList"		label="Gender" 		 	labels="Male,Female" 	values="Male,Female"			required="true"/>
+			<field name="address"		control="textarea"		label="Address" 								required="true"/>
+			<field name="interested_in"	control="checkboxList"	label="Interested In" 		object="category" 	required="true"/>
+		</fieldset>
+
+		<fieldset id="account-info">
+			<field name="user_id"			control="textInput"	label="User ID" 			required="true"/>
+			<field name="password"			control="password"	label="Password" 			required="true"/>
+			<field name="confirm_password"	control="password"	label="Confirm Password"	required="true"/>
+		</fieldset>
+	</tab>
+</form>

@@ -7,6 +7,7 @@ component {
 		var eventId      = rc.event_id;
 		prc.eventDetail  = eventService.getEventDetailsById( eventId )  ?: queryNew("");
 		rc.eventSessions = eventService.getEventSessionsById( eventId ) ?: queryNew("");
+		rc.eventSeats    = eventService.getEventSeatsById( eventId )    ?: queryNew("");
 
 		if( !prc.eventDetail.recordCount && eventBookingService.isEventBookable( eventId ) ) {
 			event.notFound();
@@ -28,30 +29,38 @@ component {
 
 	public void function submitEventBooking( event, rc, prc, args={} ) {
 
-		var formName        = "event-booking.booking";
-		var eventBooking    = event.getCollectionForForm( formName );
-		var persist         = {};
+		var formName     = "event-booking.booking";
+		var formData = event.getCollectionForForm( formName );
+		var persist      = {};
 
-		eventBooking.event_id     = rc.event_id;
-		eventBooking.website_user = prc.userId;
-		eventBooking.event_title  = rc.event_title;
-		eventBooking.event_price  = rc.event_price;
-		eventBooking.total_amount = eventBooking.event_price * eventBooking.number_of_seat;
+		formData.event_id     = rc.event_id;
+		formData.website_user = prc.userId;
+		formData.event_title  = rc.event_title;
+		formData.event_price  = rc.event_price;
+		formData.total_amount = formData.event_price * formData.number_of_seat;
 
-		var validationResult  = validateForm( formName, eventBooking );
+		var validationResult  = validateForm( formName, formData );
 
-		if( eventBookingService.checkExistingEmail(eventBooking.email) ) {
-			validationResult.addError( "email", translateResource( uri="alerts:email_already_exists" ) );
+		if ( validationResult.validated() ) {
+
+			if( eventBookingService.checkExistingEmail(formData.email) ) {
+				validationResult.addError( "email", translateResource( uri="alerts:email_already_exists" ) );
+			}
+
+			if( formData.number_of_seat LT 1 ) {
+				validationResult.addError( "number_of_seat", translateResource( uri="alerts:number_of_seats_invalid" ) );
+			}
 		}
 
         if ( !validationResult.validated() ) {
+
             persist.validationResult = validationResult;
-           	persist.savedData        = eventBooking;
+           	persist.savedData        = formData;
 
             setNextEvent( url=event.buildLink( page="event_booking_page" ), persistStruct=persist, queryString="event_id=#rc.event_id#" );
         }
 
-        eventBookingService.saveEventBookingDetail( argumentCollection = eventBooking  );
+        eventBookingService.saveEventBookingDetail( argumentCollection =formData  );
 
         // Send email and admin notification
 		eventBookingService.sendConfirmationEmail(

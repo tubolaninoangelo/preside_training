@@ -38,15 +38,6 @@ component {
 
     }
 
-    public boolean function checkExistingEmail( required string email ) {
-
-        return $getPresideObject( "event_booking" ).selectData(
-                  filter       = "email = :email"
-                , filterParams = { email = arguments.email }
-        ).recordCount;
-
-    }
-
     public query function getEventBookedDetailsByUser( required string eventId, string userId="" ) {
 
         return $getPresideObject( "event_booking" ).selectData(
@@ -62,8 +53,8 @@ component {
                     , "total_amount"
                     , "special_request"
                 ]
-                , filter = {
-                      "event_id" = arguments.eventId
+                , filter       = {
+                      "event_id"     = arguments.eventId
                     , "website_user" = arguments.userId
                 }
         );
@@ -82,7 +73,16 @@ component {
         return bookableEvent;
     }
 
-    public function sendConfirmationEmail(
+    public boolean function checkExistingEmail( required string email ) {
+
+        return $getPresideObject( "event_booking" ).selectData(
+                  filter       = "email = :email"
+                , filterParams = { email = arguments.email }
+        ).recordCount;
+
+    }
+
+    public void function sendConfirmationEmail(
           required struct  bookerDetails
         ,          boolean addPresideNotification = true
     ) {

@@ -17,4 +17,7 @@ component  {
 	property name="event_bookable"  type="boolean" 	dbtype="boolean";
 	property name="event_price" 	type="int" 		dbtype="varchar";
 	property name="sessions"  	 	relationship="one-to-many"  relatedTo="session" relationshipkey="event_detail";
+
+	property name="seats_allocated" type="numeric" dbtype="integer";
+	property name="seats_booked"    type="numeric" dbtype="integer";
 }

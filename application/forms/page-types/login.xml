@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form feature="websiteUsers">
+	<tab id="main">
+		<fieldset id="main">
+			<!-- <field binding="login.sidebar_content" /> -->
+		</fieldset>
+	</tab>
+</form>

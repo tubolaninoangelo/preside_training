@@ -5,12 +5,20 @@
 	// event.include( "/js/specific/event-booking/");
 	eventDetail   = prc.eventDetail  ?: queryNew("");
 	eventSessions = rc.eventSessions ?: queryNew("");
-	userId        = prc.userId ?: "";
-	event.include("/js/specific/event-booking/");
+	eventSeats    = rc.eventSeats    ?: queryNew("")
+	userId        = prc.userId       ?: "";
 
-	if( isBoolean( rc.updateSuccess ?: "" ) && rc.updateSuccess ){
-		rc.confirmationMessage = args.success_update_message;
+
+	if( len( eventSeats.seats_allocated ) ) {
+
+		eventSeatsVal = [];
+
+		for( x = 1 ; x < eventSeats.seats_allocated; x++ ) {
+			eventSeatsVal[x] = x;
+		}
 	}
+
+	event.include("/js/specific/event-booking/");
 
 </cfscript>
 
@@ -37,16 +45,21 @@
 					    , includeValidationJs = true
 					    , additionalArgs      = {
 					    	fields = {
-					    		session     = {
+					    		  session        = {
 						    		  values = ValueList(eventSessions.label)
-						    		, labels = ValueList(eventSessions.label) }
+						    		, labels = ValueList(eventSessions.label)
+						    	}
+						    	, number_of_seat = {
+						    		  values = ArrayToList(eventSeatsVal)
+						    		, labels = ArrayToList(eventSeatsVal)
+						    	}
 
 					    	}
 					    }
 					)#
 
 					<div class="form-group mod-submit-form mod-bordered u-aligned-center">
-						<input type="submit" name="submit-update" class="btn btn-big" value="Continue">
+						<input type="submit" name="submit-update" class="btn btn-big" value="Submit">
 					</div>
 
 				</form>

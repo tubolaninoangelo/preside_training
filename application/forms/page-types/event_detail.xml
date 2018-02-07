@@ -27,6 +27,8 @@
 			<field binding="event_detail.event_bookable" control="yesNoSwitch" />
 			<field binding="event_detail.event_price" />
 			<field binding="event_detail.sessions" />
+			<field binding="event_detail.seats_allocated" />
+			<field binding="event_detail.seats_booked"    control="readonly" />
 		</fieldset>
 	</tab>
 </form>

@@ -26,6 +26,9 @@ component extends="preside.system.config.Config" {
 
 		_setupEmailSettings();
 		_setupNotificationTopics();
+		_setupInterceptors();
+
+		coldbox.requestContextDecorator = "app.decorators.RequestContextDecorator";
 
 	}
 
@@ -38,5 +41,9 @@ component extends="preside.system.config.Config" {
 	private void function _setupNotificationTopics() {
 		settings.notificationTopics = settings.notificationTopics ?: [];
 		settings.notificationTopics.append( "eventBooking" );
+	}
+
+	private void function _setupInterceptors() output=false {
+		interceptors.prepend( { class="app.interceptors.DataChangeInterceptor" , properties={} } );
 	}
 }
